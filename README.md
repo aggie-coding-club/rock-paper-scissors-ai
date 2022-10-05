@@ -8,3 +8,5 @@ Meetings will be 6-8 pm on wednseday weekly.
 As for expectations, you are not expected to know much about AI or anything along those lines. But, a good attitude and a willingness to learn is something that would be very good to have. And as we are the project managers, we will also try and learn from everyone else, since there are going to be some people that are very knowledgable in many topics.
 
 # more-to-come...
+
+I like rock paper scissors
