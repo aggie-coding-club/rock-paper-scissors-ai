@@ -18,5 +18,5 @@ while(True):
     game = openInputStream()
     save(game, gameNumber, location)
     cont = input("Would you like to continue? ")
-    if(cont is 'N' or cont is 'n'): break
+    if(cont == 'N' or cont == 'n'): break
     gameNumber += 1

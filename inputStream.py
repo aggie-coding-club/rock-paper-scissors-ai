@@ -42,7 +42,9 @@ def openInputStream():
 
 
         #Creating tuple of match, and adding it to the main list
+        
         win = rpsOutcome(str1, str2)
+        
         match = (str1, str2, win)
         if (win == 1):
             p1wins += 1
