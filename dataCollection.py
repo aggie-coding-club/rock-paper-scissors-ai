@@ -8,6 +8,15 @@ from dataStoring import*
 # save input after each game
 # prompt user to stop after each openInputStream
 # on stop saveAll
-# after saving to main file, delete extra csv files created
 
-game = openInputStream();
+
+
+location = input("Enter Date and Location: ")
+gameNumber = 1
+
+while(True):
+    game = openInputStream()
+    save(game, gameNumber, location)
+    cont = input("Would you like to continue? ")
+    if(cont is 'N' or cont is 'n'): break
+    gameNumber += 1
