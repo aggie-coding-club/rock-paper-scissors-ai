@@ -36,6 +36,9 @@ def inputGo(event):
     global p1_move
     global p2_move
     if(p1_move != "" and p2_move != ""):
+
+        # DO STUFF
+
         increaseTurn()
         p1_move = ""
         p2_move = ""
