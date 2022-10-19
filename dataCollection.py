@@ -15,7 +15,7 @@ import tkinter as tk
 
 
 
-location = "STOP" # input("Enter Date and Location: ")
+location = input("Enter Date and Location: ")
 gameNumber = 1
 cont = 'y'
 if(location == 'STOP'):
