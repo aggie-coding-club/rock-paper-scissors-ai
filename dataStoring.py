@@ -23,7 +23,6 @@ def deleteGame(num, location):
     RPSwriter = csv.writer(tempFile, delimiter=',')
     
     for row in RPSreader:
-        
         if len(row) != 0 and row[0] == f'{location}_Game_{num}':
             row[0] = "DELETED_" + row[0]
         RPSwriter.writerow(row)

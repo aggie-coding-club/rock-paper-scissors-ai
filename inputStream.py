@@ -12,6 +12,10 @@ def openInputStream():
         # Asking user to enter their input, and splitting into two lowercase strings
         string = input("Enter Turn: ")
         strs = string.split(" ")
+        while(len(strs) != 2):
+            print("Bad Input")
+            string = input("Enter Turn: ")
+            strs = string.split(" ")
         str1 = strs[0].lower()
         str2 = strs[1].lower()
 

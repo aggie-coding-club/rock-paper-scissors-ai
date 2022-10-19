@@ -1,4 +1,5 @@
 import csv
+from turtle import width
 from rpsOutcome import*
 from inputStream import*
 from dataStoring import*
@@ -12,15 +13,14 @@ import tkinter as tk
 
 
 
-window = tk.Tk()
-greeting = tk.Label(text="Rock Paper Scissors!")
-greeting.pack()
-window.mainloop()
 
 
-location = input("Enter Date and Location: ")
+location = "STOP" # input("Enter Date and Location: ")
 gameNumber = 1
 cont = 'y'
+if(location == 'STOP'):
+    cont = 'n'
+
 while(not(cont == 'N' or cont == 'n' or cont == "No" or cont == "no")):
     game = openInputStream()
     save(game, gameNumber, location)
@@ -28,5 +28,4 @@ while(not(cont == 'N' or cont == 'n' or cont == "No" or cont == "no")):
     while(cont == "DELETE"): 
         deleteGame(int(input("Which game number? ")), location)
         cont = input("Would you like to continue? ")
-    if(cont == 'N' or cont == 'n' or cont == "No" or cont == "no"): break
     gameNumber += 1
