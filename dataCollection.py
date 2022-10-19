@@ -11,12 +11,15 @@ from dataStoring import*
 
 
 
+
 location = input("Enter Date and Location: ")
 gameNumber = 1
-
 while(True):
     game = openInputStream()
     save(game, gameNumber, location)
     cont = input("Would you like to continue? ")
-    if(cont == 'N' or cont == 'n'): break
+    while(cont == "DELETE"): 
+        deleteGame(int(input("Which game number? ")), location)
+        cont = input("Would you like to continue? ")
+    if(cont == 'N' or cont == 'n' or cont == "No" or cont == "no"): break
     gameNumber += 1
