@@ -1,5 +1,5 @@
 import csv
-from turtle import back, width
+from turtle import back, undo, width
 from rpsOutcome import*
 from inputStream import*
 from dataStoring import*
@@ -164,6 +164,8 @@ def resetTurn():
     global btn_p2_scissors
     global btn_input
     global lbl_turn_number
+    global btn_back
+
     global text_continue
     global btn_yes
     global btn_no
@@ -176,6 +178,7 @@ def resetTurn():
     btn_p2_scissors.grid_forget()
     btn_input.grid_forget()
     lbl_turn_number.grid_forget()
+    btn_back.grid_forget()
     
 
     text_continue = tk.Label(text="Would you like to continue?", font= 25)
@@ -187,8 +190,20 @@ def resetTurn():
     btn_no.bind("<Button-1>", closeWindow)
     btn_no.grid(row=1, column=2, sticky="nsew", padx=15, pady=15)
 
-
-
+def undoTurn(event):
+    global p1wins
+    global p2wins
+    global turns
+    global lbl_turn_number
+    value = int(lbl_turn_number["text"][5:])
+    if(value > 1):
+        lbl_turn_number["text"] = f"Turn {value - 1}"
+        if(turns[-1][2] == 1):
+            p1wins -= 1
+        if(turns[-1][2] == 2):
+            p2wins -= 1
+        turns.pop()
+    return
 
 def enterTurn():
     global turns
@@ -229,6 +244,7 @@ def openRPSinput(event):
     global btn_p2_scissors
     global btn_input
     global lbl_turn_number
+    global btn_back
 
     global entry_location
     global btn_location
@@ -283,8 +299,9 @@ def openRPSinput(event):
     btn_p1_scissors.bind("<Button-1>", p1_scissors)
     btn_p1_scissors.grid(row=2, column=0, sticky="nsew", padx=15, pady=15)
 
-    lbl_value = tk.Label(master=window)
-    lbl_value.grid(row=2, column=1)
+    btn_back = tk.Button(master=window, text="Undo", foreground="black", background="white", font= 25)
+    btn_back.bind("<Button-1>", undoTurn)
+    btn_back.grid(row=2, column=1)
 
     btn_p2_scissors = tk.Button(master=window, text="Scissors", foreground="black", background="white", font= 25)
     btn_p2_scissors.bind("<Button-1>", p2_scissors)
